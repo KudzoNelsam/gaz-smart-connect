@@ -2,10 +2,10 @@
 import React from 'react';
 import { 
   Card, 
-  CardContent, 
-  CardDescription, 
-  CardHeader, 
-  CardTitle 
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription
 } from "@/components/ui/card";
 import { StatCard } from '@/components/StatCard';
 import { Gauge, AlertTriangle, TrendingUp, Truck } from 'lucide-react';
@@ -13,7 +13,7 @@ import GasGauge from '@/components/GasGauge';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
-const Index = () => {
+const GasDashboard = () => {
   return (
     <div className="container mx-auto p-6">
       <div className="flex flex-col gap-6">
@@ -145,4 +145,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default GasDashboard;

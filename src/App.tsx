@@ -13,6 +13,7 @@ import GazSecure from "./pages/GazSecure";
 import GazOptim from "./pages/GazOptim";
 import GazAuto from "./pages/GazAuto";
 import Notifications from "./pages/Notifications";
+import Index from "./pages/Index";
 
 const queryClient = new QueryClient();
 
@@ -27,7 +28,8 @@ const App = () => (
             <AppSidebar />
             <main className="flex-1 overflow-y-auto">
               <Routes>
-                <Route path="/" element={<Dashboard />} />
+                <Route path="/" element={<Index />} />
+                <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/monitoring" element={<GazEssentiel />} />
                 <Route path="/security" element={<GazSecure />} />
                 <Route path="/optimization" element={<GazOptim />} />
