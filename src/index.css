@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 210 100% 50%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -34,21 +35,14 @@
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-background: 210 100% 98%;
+    --sidebar-foreground: 210 100% 20%;
+    --sidebar-primary: 210 100% 50%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 210 100% 95%;
+    --sidebar-accent-foreground: 210 100% 20%;
+    --sidebar-border: 210 100% 90%;
+    --sidebar-ring: 210 100% 50%;
   }
 
   .dark {
@@ -61,7 +55,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 210 100% 50%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -79,14 +73,15 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    
+    --sidebar-background: 210 100% 5%;
+    --sidebar-foreground: 210 100% 90%;
+    --sidebar-primary: 210 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 210 100% 10%;
+    --sidebar-accent-foreground: 210 100% 90%;
+    --sidebar-border: 210 100% 20%;
+    --sidebar-ring: 210 100% 50%;
   }
 }
 
@@ -98,4 +93,47 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.gas-gauge-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.gas-gauge-bg {
+  fill: none;
+  stroke: #e0e0e0;
+  stroke-width: 15;
+}
+
+.gas-gauge-fill {
+  fill: none;
+  stroke: #1E88E5;
+  stroke-width: 15;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.8s ease;
+}
+
+.gas-gauge-text {
+  font-size: 2rem;
+  font-weight: bold;
+  fill: #333;
+}
+
+.gas-flame-icon {
+  fill: #FF9800;
+}
+
+.gas-flame-icon.active {
+  animation: flame 1.5s ease-in-out infinite;
+}
+
+.gas-safety-button {
+  @apply bg-gas-red text-white px-4 py-2 rounded-lg font-bold transition-all duration-300 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50;
+}
+
+.gas-action-button {
+  @apply bg-gas-blue text-white px-4 py-2 rounded-lg font-bold transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
 }
